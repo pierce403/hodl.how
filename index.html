@@ -450,6 +450,7 @@
         const btn = document.getElementById("lfgButton");
         const span = document.getElementsByClassName("close")[0];
         const questionText = document.getElementById("questionText");
+        const answerButtons = document.querySelectorAll(".answer-button");
 
         const questions = [
             "Do you have Ethereum?",
@@ -470,6 +471,7 @@
             modal.style.display = "block";
             currentQuestion = 0;
             questionText.innerText = questions[currentQuestion];
+            answerButtons.forEach(button => button.style.display = "inline-block");
         }
 
         span.onclick = function () {
