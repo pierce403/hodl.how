@@ -196,6 +196,44 @@
             border-radius: 5px;
             cursor: pointer;
         }
+
+        #faq {
+            max-width: 900px;
+            margin: 3em auto;
+            padding: 2em;
+            background: white;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+        }
+
+        .faq-item {
+            margin-bottom: 1em;
+        }
+
+        .faq-question {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 0.5em 1em;
+            width: 100%;
+            text-align: left;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+            transition: background-color 0.2s ease;
+        }
+
+        .faq-question:hover {
+            background-color: var(--dark-green);
+        }
+
+        .faq-answer {
+            display: none;
+            padding: 1em;
+            background-color: var(--light-green);
+            border-radius: 5px;
+            margin-top: 0.5em;
+        }
     </style>
 </head>
 
@@ -317,6 +355,31 @@
             <p>This site is intended to educate and inform, but it’s essential to do your own research and seek
                 professional advice before making financial decisions.</p>
         </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <div class="faq-item">
+                <button class="faq-question">Why not Bitcoin?</button>
+                <div class="faq-answer">
+                    <p>Ethereum is chosen for its smart contract capabilities, which are essential for decentralized
+                        finance applications.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Why Compound?</button>
+                <div class="faq-answer">
+                    <p>Compound is a popular DeFi platform that allows users to earn interest on their crypto assets and
+                        borrow against them.</p>
+                </div>
+            </div>
+            <div class="faq-item">
+                <button class="faq-question">Why Coinbase?</button>
+                <div class="faq-answer">
+                    <p>Coinbase is a user-friendly platform for buying, selling, and managing cryptocurrency, making it
+                        accessible for beginners.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
     <script>
@@ -371,6 +434,13 @@
                 questionText.innerText = advice[currentQuestion];
             }
         }
+
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const answer = button.nextElementSibling;
+                answer.style.display = answer.style.display === 'block' ? 'none' : 'block';
+            });
+        });
     </script>
 
 </body>
