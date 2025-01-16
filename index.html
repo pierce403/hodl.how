@@ -1,151 +1,230 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Don't Sell Your Crypto</title>
     <style>
+        :root {
+            --primary-green: #4CAF50;
+            --light-green: #E8F5E9;
+            --dark-green: #2E7D32;
+            --text-dark: #1C1C1C;
+            --text-light: #ffffff;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            line-height: 1.7;
             margin: 0;
             padding: 0;
-            background-color: #f9f9f9;
-            color: #333;
+            background-color: var(--light-green);
+            color: var(--text-dark);
         }
 
         header {
-            background-color: #222;
-            color: white;
-            padding: 1em 0;
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            color: var(--text-light);
+            padding: 2em 0;
             text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         main {
-            max-width: 800px;
-            margin: 2em auto;
-            padding: 1em;
+            max-width: 900px;
+            margin: 3em auto;
+            padding: 2em;
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
         }
 
-        h1, h2 {
-            color: #444;
+        h1,
+        h2 {
+            color: var(--dark-green);
+            margin-top: 1.5em;
+            font-weight: 600;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+
+        h2 {
+            font-size: 1.8em;
+            border-bottom: 2px solid var(--light-green);
+            padding-bottom: 0.5em;
         }
 
         a {
-            color: #007bff;
+            color: var(--primary-green);
             text-decoration: none;
+            transition: color 0.2s ease;
         }
 
         a:hover {
-            text-decoration: underline;
+            color: var(--dark-green);
+            text-decoration: none;
         }
 
         section {
-            margin-bottom: 2em;
+            margin-bottom: 3em;
+            padding: 1em;
+            border-radius: 8px;
+            transition: transform 0.2s ease;
         }
 
-        ul {
-            padding-left: 1.5em;
+        section:hover {
+            transform: translateY(-2px);
+        }
+
+        ul,
+        ol {
+            padding-left: 1.8em;
+        }
+
+        li {
+            margin-bottom: 0.5em;
+        }
+
+        strong {
+            color: var(--dark-green);
         }
 
         footer {
             text-align: center;
-            padding: 1em 0;
-            background-color: #222;
-            color: white;
-            margin-top: 2em;
+            padding: 2em 0;
+            background: linear-gradient(135deg, var(--dark-green), var(--primary-green));
+            color: var(--text-light);
+            margin-top: 3em;
+        }
+
+        @media (max-width: 768px) {
+            main {
+                margin: 1em;
+                padding: 1.5em;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
+
 <body>
 
-<header>
-    <h1>DON'T SELL YOUR CRYPTO!</h1>
-</header>
+    <header>
+        <h1>DON'T SELL YOUR CRYPTO!</h1>
+    </header>
 
-<main>
-    <section>
-        <h2>Unlock the Value of Your Assets</h2>
-        <p>Discover how you can use your crypto to take tax-free loans while continuing to benefit from any increase in the value of your underlying assets. This site integrates with <a href="https://app.compound.finance/?market=usdc-mainnet" target="_blank">Compound Finance</a>, a decentralized protocol that enables you to borrow against your cryptocurrency holdings without selling them. For now, we are recommending deposits with Ethereum to withdraw USDC. Dive into the possibilities of leveraging your assets wisely!</p>
-    </section>
+    <main>
+        <section>
+            <h2>Unlock the Value of Your Assets</h2>
+            <p>Discover how you can use your crypto to take tax-free loans while continuing to benefit from any increase
+                in the value of your underlying assets. This site integrates with <a
+                    href="https://app.compound.finance/?market=usdc-mainnet" target="_blank">Compound Finance</a>, a
+                decentralized protocol that enables you to borrow against your cryptocurrency holdings without selling
+                them. For now, we are recommending deposits with Ethereum to withdraw USDC. Dive into the possibilities
+                of leveraging your assets wisely!</p>
+        </section>
 
-    <section>
-        <h2>Risks</h2>
-        <ul>
-            <li><strong>Liquidation Risk</strong>: If the value of your collateral drops too low compared to the borrowed amount, your assets could be liquidated to repay the loan. This risk increases if market conditions are volatile.</li>
-            <li><strong>Protocol Risk</strong>: While Compound Finance is a robust and widely used protocol, it’s still subject to potential bugs, hacks, or governance issues inherent in decentralized finance (DeFi).</li>
-            <li><strong>No Custodial Risks</strong>: Unlike custodial services, you retain control of your assets in the protocol. This means no third party has custody of your funds.</li>
-        </ul>
-    </section>
+        <section>
+            <h2>Risks</h2>
+            <ul>
+                <li><strong>Liquidation Risk</strong>: If the value of your collateral drops too low compared to the
+                    borrowed amount, your assets could be liquidated to repay the loan. This risk increases if market
+                    conditions are volatile.</li>
+                <li><strong>Protocol Risk</strong>: While Compound Finance is a robust and widely used protocol, it’s
+                    still subject to potential bugs, hacks, or governance issues inherent in decentralized finance
+                    (DeFi).</li>
+                <li><strong>No Custodial Risks</strong>: Unlike custodial services, you retain control of your assets in
+                    the protocol. This means no third party has custody of your funds.</li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Guidelines</h2>
-        <p>To minimize risks and use this strategy effectively:</p>
-        <ul>
-            <li><strong>Bull Markets</strong>: Keep your liquidation risk below 10% to account for market fluctuations.</li>
-            <li><strong>Bear Markets</strong>: Stay conservative with a maximum of 20% liquidation risk to avoid being caught off guard by price drops.</li>
-        </ul>
-        <p>Careful management of your collateral ratios ensures you can leverage your assets without exposing yourself to undue risk.</p>
-    </section>
+        <section>
+            <h2>Guidelines</h2>
+            <p>To minimize risks and use this strategy effectively:</p>
+            <ul>
+                <li><strong>Bull Markets</strong>: Keep your liquidation risk below 10% to account for market
+                    fluctuations.</li>
+                <li><strong>Bear Markets</strong>: Stay conservative with a maximum of 20% liquidation risk to avoid
+                    being caught off guard by price drops.</li>
+            </ul>
+            <p>Careful management of your collateral ratios ensures you can leverage your assets without exposing
+                yourself to undue risk.</p>
+        </section>
 
-    <section>
-        <h2>Supply Collateral</h2>
-        <ol>
-            <li>Visit the <a href="https://app.compound.finance/?market=usdc-mainnet" target="_blank">Compound Finance USDC Market</a>.</li>
-            <li>Connect your wallet to the platform.</li>
-            <li>Deposit Ethereum (ETH) into the protocol as a "collateral asset."</li>
-            <li>Confirm your transaction and ensure your collateral is properly deposited.</li>
-        </ol>
-    </section>
+        <section>
+            <h2>Supply Collateral</h2>
+            <ol>
+                <li>Visit the <a href="https://app.compound.finance/?market=usdc-mainnet" target="_blank">Compound
+                        Finance USDC Market</a>.</li>
+                <li>Connect your wallet to the platform.</li>
+                <li>Deposit Ethereum (ETH) into the protocol as a "collateral asset."</li>
+                <li>Confirm your transaction and ensure your collateral is properly deposited.</li>
+            </ol>
+        </section>
 
-    <section>
-        <h2>Borrow USDC</h2>
-        <ol>
-            <li>Navigate to the "Borrow" section on Compound Finance.</li>
-            <li>Select USDC as the asset to borrow.</li>
-            <li>Specify the amount you need, ensuring you stay below the 10% liquidation risk threshold.</li>
-            <li>Confirm your transaction to borrow USDC.</li>
-            <li>Transfer the borrowed USDC to your preferred exchange, such as Coinbase.</li>
-            <li>From Coinbase, deposit the USDC into your normal US bank account.</li>
-        </ol>
-        <p><strong>Important Notes</strong>: Do not borrow more than you need, as the loan will accrue interest over time.</p>
-    </section>
+        <section>
+            <h2>Borrow USDC</h2>
+            <ol>
+                <li>Navigate to the "Borrow" section on Compound Finance.</li>
+                <li>Select USDC as the asset to borrow.</li>
+                <li>Specify the amount you need, ensuring you stay below the 10% liquidation risk threshold.</li>
+                <li>Confirm your transaction to borrow USDC.</li>
+                <li>Transfer the borrowed USDC to your preferred exchange, such as Coinbase.</li>
+                <li>From Coinbase, deposit the USDC into your normal US bank account.</li>
+            </ol>
+            <p><strong>Important Notes</strong>: Do not borrow more than you need, as the loan will accrue interest over
+                time.</p>
+        </section>
 
-    <section>
-        <h2>Exit</h2>
-        <ol>
-            <li>To repay your loan, withdraw a portion of your collateral Ethereum (ETH).</li>
-            <li>Use a decentralized exchange like Uniswap to sell the withdrawn ETH for USDC.</li>
-            <li>Use the USDC to repay your loan on Compound Finance.</li>
-            <li>Once your loan is fully repaid, you can exit the protocol by withdrawing any remaining collateral.</li>
-        </ol>
-        <p><strong>Important Notes</strong>: Selling ETH for USDC is a taxable event. Be sure to account for potential taxes on any realized gains.</p>
-    </section>
+        <section>
+            <h2>Exit</h2>
+            <ol>
+                <li>To repay your loan, withdraw a portion of your collateral Ethereum (ETH).</li>
+                <li>Use a decentralized exchange like Uniswap to sell the withdrawn ETH for USDC.</li>
+                <li>Use the USDC to repay your loan on Compound Finance.</li>
+                <li>Once your loan is fully repaid, you can exit the protocol by withdrawing any remaining collateral.
+                </li>
+            </ol>
+            <p><strong>Important Notes</strong>: Selling ETH for USDC is a taxable event. Be sure to account for
+                potential taxes on any realized gains.</p>
+        </section>
 
-    <section>
-        <h2>References</h2>
-        <ul>
-            <li><a href="https://compound.finance/docs" target="_blank">Compound Finance Documentation</a></li>
-            <li><a href="https://compound.finance/how-it-works" target="_blank">How Compound Works</a></li>
-            <li><a href="https://uniswap.org/guide" target="_blank">Uniswap Guide</a></li>
-            <li><a href="https://cryptotaxguides.com" target="_blank">Crypto Tax Guide</a></li>
-        </ul>
-    </section>
+        <section>
+            <h2>References</h2>
+            <ul>
+                <li><a href="https://compound.finance/docs" target="_blank">Compound Finance Documentation</a></li>
+                <li><a href="https://compound.finance/how-it-works" target="_blank">How Compound Works</a></li>
+                <li><a href="https://uniswap.org/guide" target="_blank">Uniswap Guide</a></li>
+                <li><a href="https://cryptotaxguides.com" target="_blank">Crypto Tax Guide</a></li>
+            </ul>
+        </section>
 
-    <section>
-        <h2>Disclaimers</h2>
-        <ul>
-            <li>The information presented on this site is <strong>US-centric</strong> and may not be applicable in other jurisdictions.</li>
-            <li>Always consult a <strong>financial advisor</strong> for personalized financial guidance.</li>
-            <li>For tax-related inquiries, seek advice from a qualified <strong>tax advisor</strong>.</li>
-            <li>For legal questions or concerns, consult a <strong>lawyer</strong> to understand your rights and responsibilities.</li>
-        </ul>
-        <p>This site is intended to educate and inform, but it’s essential to do your own research and seek professional advice before making financial decisions.</p>
-    </section>
-</main>
+        <section>
+            <h2>Disclaimers</h2>
+            <ul>
+                <li>The information presented on this site is <strong>US-centric</strong> and may not be applicable in
+                    other jurisdictions.</li>
+                <li>Always consult a <strong>financial advisor</strong> for personalized financial guidance.</li>
+                <li>For tax-related inquiries, seek advice from a qualified <strong>tax advisor</strong>.</li>
+                <li>For legal questions or concerns, consult a <strong>lawyer</strong> to understand your rights and
+                    responsibilities.</li>
+            </ul>
+            <p>This site is intended to educate and inform, but it’s essential to do your own research and seek
+                professional advice before making financial decisions.</p>
+        </section>
+    </main>
 
 </body>
+
 </html>
