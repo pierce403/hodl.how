@@ -136,6 +136,66 @@
                 font-size: 1.5em;
             }
         }
+
+        .lfg-button {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            font-size: 1.5em;
+            padding: 1em 2em;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            margin-top: 2em;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.4);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 15% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            border-radius: 8px;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        .answer-button {
+            background-color: var(--primary-green);
+            color: var(--text-light);
+            padding: 0.5em 1em;
+            margin: 0.5em;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
     </style>
 </head>
 
@@ -155,6 +215,19 @@
                 them. For now, we are recommending deposits with Ethereum to withdraw USDC. Dive into the possibilities
                 of leveraging your assets wisely!</p>
         </section>
+
+        <button id="lfgButton" class="lfg-button">LFG</button>
+
+        <div id="questionModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="questionnaire">
+                    <p id="questionText">Do you have Ethereum roughly equal to 10x your yearly costs of living?</p>
+                    <button class="answer-button" onclick="nextQuestion(true)">Yes</button>
+                    <button class="answer-button" onclick="nextQuestion(false)">No</button>
+                </div>
+            </div>
+        </div>
 
         <section>
             <h2>Risks</h2>
@@ -245,6 +318,60 @@
                 professional advice before making financial decisions.</p>
         </section>
     </main>
+
+    <script>
+        const modal = document.getElementById("questionModal");
+        const btn = document.getElementById("lfgButton");
+        const span = document.getElementsByClassName("close")[0];
+        const questionText = document.getElementById("questionText");
+
+        const questions = [
+            "Do you have Ethereum roughly equal to 10x your yearly costs of living?",
+            "Do you have a Coinbase account?",
+            "Have you added collateral?",
+            "Have you done your first borrow?",
+            "Have you sold it on Coinbase?"
+        ];
+
+        const advice = [
+            "Consider saving more Ethereum to reach your goal.",
+            "Create a Coinbase account to proceed.",
+            "Add collateral to secure your borrow.",
+            "Complete your first borrow to continue.",
+            "Sell your borrowed amount on Coinbase to finalize."
+        ];
+
+        let currentQuestion = 0;
+
+        btn.onclick = function () {
+            modal.style.display = "block";
+            currentQuestion = 0;
+            questionText.innerText = questions[currentQuestion];
+        }
+
+        span.onclick = function () {
+            modal.style.display = "none";
+        }
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function nextQuestion(answer) {
+            if (answer) {
+                currentQuestion++;
+                if (currentQuestion < questions.length) {
+                    questionText.innerText = questions[currentQuestion];
+                } else {
+                    questionText.innerText = "Congratulations! You've completed all steps.";
+                }
+            } else {
+                questionText.innerText = advice[currentQuestion];
+            }
+        }
+    </script>
 
 </body>
 
