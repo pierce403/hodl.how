@@ -254,7 +254,7 @@
                 of leveraging your assets wisely!</p>
         </section>
 
-        <button id="lfgButton" class="lfg-button">LFG</button>
+        <button id="lfgButton" class="lfg-button">LFG!</button>
 
         <div id="questionModal" class="modal">
             <div class="modal-content">
@@ -389,19 +389,15 @@
         const questionText = document.getElementById("questionText");
 
         const questions = [
-            "Do you have Ethereum roughly equal to 10x your yearly costs of living?",
+            "Do you have Ethereum?",
             "Do you have a Coinbase account?",
-            "Have you added collateral?",
-            "Have you done your first borrow?",
-            "Have you sold it on Coinbase?"
+            "Do you have Metamask installed?",
         ];
 
         const advice = [
-            "Consider saving more Ethereum to reach your goal.",
-            "Create a Coinbase account to proceed.",
-            "Add collateral to secure your borrow.",
-            "Complete your first borrow to continue.",
-            "Sell your borrowed amount on Coinbase to finalize."
+            "Go get some Ethereum",
+            "Create a Coinbase account to proceed: https://www.coinbase.com/",
+            "Install Metamask to proceed: https://metamask.io/",
         ];
 
         let currentQuestion = 0;
@@ -428,7 +424,7 @@
                 if (currentQuestion < questions.length) {
                     questionText.innerText = questions[currentQuestion];
                 } else {
-                    questionText.innerText = "Congratulations! You've completed all steps.";
+                    questionText.innerText = "Congratulations! You might be ready to add some collateral and start using Compound.";
                 }
             } else {
                 questionText.innerText = advice[currentQuestion];
