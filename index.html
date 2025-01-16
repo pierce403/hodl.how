@@ -491,6 +491,7 @@
                     questionText.innerText = questions[currentQuestion];
                 } else {
                     questionText.innerText = "Congratulations! You might be ready to add some collateral and start using Compound!";
+                    answerButtons.forEach(button => button.style.display = "none");
                 }
             } else {
                 questionText.innerText = advice[currentQuestion];
