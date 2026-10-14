@@ -23,5 +23,15 @@
       "head_sampling_rate": 0.01
     }
   },
-  "main": "src/worker.mjs"
+  "main": "src/worker.mjs",
+  "routes": [
+    {
+      "pattern": "hodl.how/*",
+      "zone_name": "hodl.how"
+    },
+    {
+      "pattern": "www.hodl.how/*",
+      "zone_name": "hodl.how"
+    }
+  ]
 }
